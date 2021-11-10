@@ -18,12 +18,12 @@ output [
     name: "scores_noise_filter__0"
     data_type: TYPE_FP32
     dims: [-1, 2]
-  }
+  },
   {
     name: "pass_noise_filter__1"
     data_type: TYPE_BOOL
     dims: [-1]
-  }
+  },
   {
     name: "out_gravnet__2"
     data_type: TYPE_BOOL
