@@ -1,0 +1,32 @@
+name: "hgcal_OC_PT"
+platform: "pytorch_libtorch"
+max_batch_size: 0
+input [
+  {
+    name: "x__0"
+    data_type: TYPE_FP32
+    dims: [-1, 9]
+  },
+  {
+    name: "batch__1"
+    data_type: TYPE_INT32
+    dims: [-1]
+  }
+]
+output [
+  {
+    name: "scores_noise_filter__0"
+    data_type: TYPE_FP32
+    dims: [-1, 2]
+  }
+  {
+    name: "pass_noise_filter__1"
+    data_type: TYPE_BOOL
+    dims: [-1]
+  }
+  {
+    name: "out_gravnet__2"
+    data_type: TYPE_BOOL
+    dims: [-1, 6]
+  }
+]
