@@ -1,0 +1,20 @@
+name: "mlpf_acat2021"
+platform: "onnxruntime_onnx"
+max_batch_size : 200
+dynamic_batching {
+}
+input [
+  {
+    name: "x:0"
+    data_type: TYPE_FP32
+    dims: [ -1, 25 ]
+  }
+]
+output [
+  {
+    name: "Identity:0"
+    data_type: TYPE_FP32
+    dims: [ -1, 14 ]
+    label_filename: "mlpf_labels.txt"
+  }
+]
