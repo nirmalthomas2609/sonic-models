@@ -1,4 +1,4 @@
-name: "particlenet_AK4_PT"
+name: "particlenet_AK4"
 platform: "pytorch_libtorch"
 max_batch_size : 500
 dynamic_batching {
@@ -9,33 +9,89 @@ input [
     name: "pf_points__0"
     data_type: TYPE_FP32
     dims: [ 2, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "pf_features__1"
     data_type: TYPE_FP32
     dims: [ 20, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "pf_mask__2"
     data_type: TYPE_FP32
     dims: [ 1, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_points__3"
     data_type: TYPE_FP32
     dims: [ 2, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_features__4"
     data_type: TYPE_FP32
     dims: [ 11, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_mask__5"
     data_type: TYPE_FP32
     dims: [ 1, -1 ]
+    allow_ragged_batch: true
   }
 ]
+batch_input [
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_points__0"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_points__6"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_features__1"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_features__7"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_mask__2"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_mask__8"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_points__3"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_points__9"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_features__4"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_features__10"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_mask__5"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_mask__11"
+  }
+]
+parameters: {
+    key: "DISABLE_OPTIMIZED_EXECUTION"
+    value: {
+      string_value: "true"
+    }
+}
+parameters: {
+    key: "INFERENCE_MODE"
+    value: {
+      string_value: "true"
+    }
+}
 output [
   {
     name: "softmax__0"
