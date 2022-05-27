@@ -46,37 +46,37 @@ batch_input [
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "pf_points"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_pf_points"
   },
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "pf_features"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_pf_features"
   },
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "pf_mask"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_pf_mask"
   },
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "sv_points"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_sv_points"
   },
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "sv_features"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_sv_features"
   },
   {
     kind: BATCH_ITEM_SHAPE
     source_input: "sv_mask"
-    data_type: TYPE_INT32
+    data_type: TYPE_INT64
     target_name: "batch_shapes_sv_mask"
   }
 ]
