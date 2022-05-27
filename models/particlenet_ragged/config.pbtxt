@@ -1,4 +1,4 @@
-name: "particlenet"
+name: "particlenet_ragged"
 platform: "onnxruntime_onnx"
 max_batch_size : 160
 dynamic_batching {
