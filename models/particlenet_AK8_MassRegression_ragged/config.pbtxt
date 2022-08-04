@@ -80,11 +80,6 @@ batch_input [
     target_name: "batch_shapes_sv_mask"
   }
 ]
-optimization {
-  graph {
-    level: -1
-  }
-}
 output [
   {
     name: "output"
