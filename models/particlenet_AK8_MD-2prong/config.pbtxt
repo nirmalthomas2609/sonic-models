@@ -9,33 +9,82 @@ input [
     name: "pf_points"
     data_type: TYPE_FP32
     dims: [ 2, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "pf_features"
     data_type: TYPE_FP32
     dims: [ 20, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "pf_mask"
     data_type: TYPE_FP32
     dims: [ 1, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_points"
     data_type: TYPE_FP32
     dims: [ 2, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_features"
     data_type: TYPE_FP32
     dims: [ 11, -1 ]
+    allow_ragged_batch: true
   },
   {
     name: "sv_mask"
     data_type: TYPE_FP32
     dims: [ 1, -1 ]
+    allow_ragged_batch: true
   }
 ]
+batch_input [
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_points"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_points"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_features"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_features"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "pf_mask"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_pf_mask"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_points"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_points"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_features"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_features"
+  },
+  {
+    kind: BATCH_ITEM_SHAPE
+    source_input: "sv_mask"
+    data_type: TYPE_INT32
+    target_name: "batch_shapes_sv_mask"
+  }
+]
+optimization {
+  graph {
+    level: -1
+  }
+}
 output [
   {
     name: "softmax"
