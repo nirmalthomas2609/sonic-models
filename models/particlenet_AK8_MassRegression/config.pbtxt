@@ -36,6 +36,11 @@ input [
     dims: [ 1, -1 ]
   }
 ]
+optimization {
+  graph {
+    level: -1
+  }
+}
 output [
   {
     name: "output"
