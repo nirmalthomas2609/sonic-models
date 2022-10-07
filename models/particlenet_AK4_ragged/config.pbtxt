@@ -1,4 +1,4 @@
-name: "particlenet_AK8_MassRegression"
+name: "particlenet_AK4_ragged"
 platform: "onnxruntime_onnx"
 max_batch_size : 1000
 dynamic_batching {
@@ -15,7 +15,7 @@ input [
   {
     name: "pf_features"
     data_type: TYPE_FP32
-    dims: [ 25, -1 ]
+    dims: [ 20, -1 ]
     allow_ragged_batch: true
   },
   {
@@ -88,9 +88,9 @@ optimization {
 }
 output [
   {
-    name: "output"
+    name: "softmax"
     data_type: TYPE_FP32
-    dims: [ 1 ]
+    dims: [ 8 ]
     label_filename: "particlenet_labels.txt"
   }
 ]
