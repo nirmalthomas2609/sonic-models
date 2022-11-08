@@ -1,9 +1,9 @@
 name: "particlenet_AK4_ragged"
 platform: "onnxruntime_onnx"
-max_batch_size : 50
+max_batch_size : 200
 dynamic_batching {
-   preferred_batch_size: [ 4, 8, 16 ]
-   max_queue_delay_microseconds: 25
+   preferred_batch_size: [ 16, 32, 64, 96 ]
+   max_queue_delay_microseconds: 200
 }
 input [
   {
