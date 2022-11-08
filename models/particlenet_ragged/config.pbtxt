@@ -88,7 +88,7 @@ output [
   {
     name: "softmax"
     data_type: TYPE_FP32
-    dims: [ -1, 20 ]
+    dims: [ 20 ]
     label_filename: "particlenet_labels.txt"
   }
 ]
