@@ -77,7 +77,7 @@ input [
     data_type: TYPE_INT32
     dims: [ -1 ]
     allow_ragged_batch: true
-  },
+  }
 ]
 optimization {
   graph {
